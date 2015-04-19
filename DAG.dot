@@ -1,0 +1,31 @@
+digraph algorithm{
+    initialization -> person;
+    person -> position_filled;
+
+    position_filled -> next_position [label="yes"];
+    position_filled -> able [label="no"]; 
+
+    next_position -> position_filled [label="exist"];
+    next_position -> next_person [label="none"];
+
+    able -> available [label = "yes"];
+    able -> next_position [label = "no"];
+
+    available -> next_person[label="no"];
+    available -> schedule[label="yes"];
+
+    schedule -> row_filled;
+    row_filled -> next_person [label="no"];
+    row_filled -> next_day [label="yes"];
+
+    next_day -> finished [label="none"];
+    next_day -> person [label="stay on\n same person"];
+
+    next_person -> position_filled [label="exist"];
+    next_person -> next_day [label="none"];
+}
+
+/* Lump the Can work posi., # of days, and available days as a single
+   avalability block. Easier to maintain, graph, and analyze. Potential
+   ability to simplify the math too, 3 less comparisons */
+

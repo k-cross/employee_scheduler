@@ -13,35 +13,31 @@
 #                            different CSVs for availability and positions.
 
 #Initialzed variables
-#Store the schedule data in schedule
-
 #Randomizes the row order for different outcomes upon each run
-#this is to avoid favoritism due to the algorithmic method
-schedule = read.csv("availability.csv")
-randVector = runif(length(schedule[,1]))
-schedule = schedule[order(randVector),]
-
-#scheduler = function(schedule){
+availability = read.csv("availability.csv")
+shiftClass = read.csv("shift_class.csv")
+randVector = runif(length(availability[,1]))
+availability = availability[order(randVector),]
 
 #Number of people
-people = schedule[,1]
+people = availability[,1]
 
 #initialize the position vectors for comparing choices
-position = schedule[, 9:(dim(schedule)[2] - 2)]
+position = availability[, 9:(dim(availability)[2] - 2)]
 
 #availability based on what day of week
-availability = schedule[,2:8]
-weekDaySum = rowSums(availability)
+dayAvailability = availability[,2:8]
+weekDaySum = rowSums(dayAvailability)
 
 #availability based on how many days can work
-workTime = schedule[,dim(schedule)[2] - 1]
+workTime = availability[,dim(availability)[2] - 1]
 
 dayIndex = 0
 daysOpen = 7
 
 optimizedSchedule = matrix("0", daysOpen, length(positions[1,]))
 colnames(optimizedSchedule) = colnames(positions)
-rownames(optimizedSchedule) = colnames(availability)
+rownames(optimizedSchedule) = colnames(dayAvailability)
 
 #creating general algorithm for schedule
 while(dayIndex < daysOpen){
@@ -52,7 +48,7 @@ while(dayIndex < daysOpen){
     while(scheduleIndex < length(positions[1,])){
         if(optimizedSchedule[dayIndex+1, positionIndex+1] == "0"){
             if(positions[personIndex+1,positionIndex+1] == 1){
-                if(availability[personIndex+1,dayIndex+1] > 0 && workTime[personIndex+1] > 0){
+                if(dayAvailability[personIndex+1,dayIndex+1] > 0 && workTime[personIndex+1] > 0){
                     optimizedSchedule[dayIndex+1, positionIndex+1] = as.character(people[personIndex+1])
                     workTime[personIndex+1] = workTime[personIndex+1] -1
                     positionIndex = positionIndex + 1
@@ -93,7 +89,5 @@ while(dayIndex < daysOpen){
 
     dayIndex = dayIndex+1
 }
-#}
-#debug(scheduler)
 
 write.csv(optimizedSchedule, file = "weekly_schedule.csv")
