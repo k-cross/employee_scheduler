@@ -1,0 +1,872 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.26.3 (20100126.1600)
+%%Title: algorithm
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 1942 1206
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 1906 1170 boxprim clip newpath
+1 1 set_scale 0 rotate 40 41 translate
+% ros_init
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1001 1144 83.99 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+944 1138.9 moveto 114 (init: find base vector) alignedtext
+grestore
+% position
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1001 1070 191.23 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+861.5 1064.9 moveto 279 (Create temporary vector for people filling position) alignedtext
+grestore
+% ros_init->position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1001 1125.71 moveto
+1001 1117.46 1001 1107.54 1001 1098.36 curveto
+stroke
+0 0 0 edgecolor
+newpath 1004.5 1098.08 moveto
+1001 1088.08 lineto
+997.5 1098.08 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1004.5 1098.08 moveto
+1001 1088.08 lineto
+997.5 1098.08 lineto
+closepath stroke
+grestore
+% person
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+923 996 35.24 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+903.5 990.9 moveto 39 (Person) alignedtext
+grestore
+% position->person
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 982.12 1052.09 moveto
+971.64 1042.15 958.5 1029.68 947.26 1019.02 curveto
+stroke
+0 0 0 edgecolor
+newpath 949.51 1016.33 moveto
+939.85 1011.99 lineto
+944.7 1021.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 949.51 1016.33 moveto
+939.85 1011.99 lineto
+944.7 1021.41 lineto
+closepath stroke
+grestore
+% validate
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+892 922 81.24 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+837.5 916.9 moveto 109 (Perform Validation) alignedtext
+grestore
+% person->validate
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 915.5 978.09 moveto
+911.9 969.52 907.53 959.06 903.53 949.51 curveto
+stroke
+0 0 0 edgecolor
+newpath 906.63 947.88 moveto
+899.54 940 lineto
+900.18 950.58 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 906.63 947.88 moveto
+899.54 940 lineto
+900.18 950.58 lineto
+closepath stroke
+grestore
+% next_person
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+713 834 55.25 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+678.5 828.9 moveto 69 (Next Person) alignedtext
+grestore
+% validate->next_person
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 858.33 905.45 moveto
+828.28 890.68 784.25 869.03 752.54 853.44 curveto
+stroke
+0 0 0 edgecolor
+newpath 754.05 850.28 moveto
+743.53 849.01 lineto
+750.96 856.56 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 754.05 850.28 moveto
+743.53 849.01 lineto
+750.96 856.56 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+819 872.9 moveto 30 (Deny) alignedtext
+grestore
+% fill_position
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+968 834 182.13 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+835.5 828.9 moveto 265 (Fill Position and Find Next Position to be Filled) alignedtext
+grestore
+% validate->fill_position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 907.38 904.19 moveto
+918.43 891.39 933.5 873.95 945.85 859.65 curveto
+stroke
+0 0 0 edgecolor
+newpath 948.49 861.94 moveto
+952.38 852.08 lineto
+943.2 857.36 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 948.49 861.94 moveto
+952.38 852.08 lineto
+943.2 857.36 lineto
+closepath stroke
+grestore
+% fill_position->position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 972.04 852.06 moveto
+975.09 866.15 979.21 886.25 982 904 curveto
+989.52 951.89 995.32 1007.99 998.44 1041.18 curveto
+stroke
+0 0 0 edgecolor
+newpath 994.99 1041.87 moveto
+999.39 1051.51 lineto
+1001.96 1041.23 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 994.99 1041.87 moveto
+999.39 1051.51 lineto
+1001.96 1041.23 lineto
+closepath stroke
+grestore
+% wd_condition
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+664 746 293.77 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+446 740.9 moveto 436 (If all workday positions cannot be filled, the base vector is the scheduled vector) alignedtext
+grestore
+% fill_position->wd_condition
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 909.03 816.93 moveto
+859.12 802.48 787.48 781.75 734.55 766.42 curveto
+stroke
+0 0 0 edgecolor
+newpath 735.47 763.05 moveto
+724.89 763.63 lineto
+733.53 769.77 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 735.47 763.05 moveto
+724.89 763.63 lineto
+733.53 769.77 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+844 784.9 moveto 31 (None) alignedtext
+grestore
+% wd_position_matrix
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+588 672 588.2 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+143.5 666.9 moveto 889 (Calculate optimizations then add column to position matrix or create one. NULLs and Deletes are used to lock people or remove from a position to increse speed.) alignedtext
+grestore
+% wd_condition->wd_position_matrix
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 645.21 727.71 moveto
+635.73 718.48 624.09 707.14 613.79 697.11 curveto
+stroke
+0 0 0 edgecolor
+newpath 616.18 694.55 moveto
+606.57 690.08 lineto
+611.29 699.57 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 616.18 694.55 moveto
+606.57 690.08 lineto
+611.29 699.57 lineto
+closepath stroke
+grestore
+% wd_finish
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+962 598 89.04 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+901.5 592.9 moveto 121 (Work Day is Finished) alignedtext
+grestore
+% wd_position_matrix->wd_finish
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 678.06 654.18 moveto
+742.45 641.44 828.04 624.51 888.36 612.57 curveto
+stroke
+0 0 0 edgecolor
+newpath 889.06 616 moveto
+898.19 610.63 lineto
+887.7 609.13 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 889.06 616 moveto
+898.19 610.63 lineto
+887.7 609.13 lineto
+closepath stroke
+grestore
+% next_day
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1137 524 44.2 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1111 518.9 moveto 52 (Next Day) alignedtext
+grestore
+% wd_finish->next_day
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1000.4 581.76 moveto
+1028.97 569.68 1067.86 553.24 1096.83 540.98 curveto
+stroke
+0 0 0 edgecolor
+newpath 1098.4 544.12 moveto
+1106.25 537 lineto
+1095.68 537.67 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1098.4 544.12 moveto
+1106.25 537 lineto
+1095.68 537.67 lineto
+closepath stroke
+grestore
+% next_day->position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1162.71 538.7 moveto
+1181.61 551.63 1204 572.35 1204 598 curveto
+1204 996 1204 996 1204 996 curveto
+1204 1020.45 1151.37 1039.18 1099.71 1051.69 curveto
+stroke
+0 0 0 edgecolor
+newpath 1098.68 1048.33 moveto
+1089.74 1054.03 lineto
+1100.28 1055.15 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1098.68 1048.33 moveto
+1089.74 1054.03 lineto
+1100.28 1055.15 lineto
+closepath stroke
+grestore
+% sch_init
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1414 382 379.07 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1130 376.9 moveto 568 (init: scheduler and create a 3d table of matrices where size is determined by the largest position matrix.) alignedtext
+grestore
+% next_day->sch_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1148.81 506.21 moveto
+1167.2 479.03 1202.5 429.15 1221 418 curveto
+1231.71 411.54 1252.14 405.83 1275.84 400.96 curveto
+stroke
+0 0 0 edgecolor
+newpath 1276.67 404.37 moveto
+1285.8 399 lineto
+1275.32 397.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1276.67 404.37 moveto
+1285.8 399 lineto
+1275.32 397.5 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1173 474.9 moveto 31 (None) alignedtext
+grestore
+% incr_elm
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1564 436 334.07 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1315 430.9 moveto 498 (Calculate current schedule optimizations then switch to the next empty scheduling matrix) alignedtext
+grestore
+% next_day->incr_elm
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1176.41 515.88 moveto
+1242.54 502.25 1377.64 474.41 1469.52 455.47 curveto
+stroke
+0 0 0 edgecolor
+newpath 1470.3 458.89 moveto
+1479.38 453.44 lineto
+1468.88 452.03 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1470.3 458.89 moveto
+1479.38 453.44 lineto
+1468.88 452.03 lineto
+closepath stroke
+grestore
+% repeat
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+942 436 232.03 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+771.5 430.9 moveto 341 (Repeat process until the smallest position matrix is exhausted) alignedtext
+grestore
+% next_day->repeat
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1107.38 510.63 moveto
+1076.48 496.69 1027.51 474.59 990.86 458.05 curveto
+stroke
+0 0 0 edgecolor
+newpath 991.91 454.68 moveto
+981.35 453.76 lineto
+989.03 461.06 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 991.91 454.68 moveto
+981.35 453.76 lineto
+989.03 461.06 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1057 474.9 moveto 31 (None) alignedtext
+grestore
+% new_wd_pos_mat
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1211 1144 108.04 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1135.5 1138.9 moveto 151 (Create new position matrix) alignedtext
+grestore
+% find_max_pos
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1331 92 232.83 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1159.5 86.9 moveto 343 (find maximum optimal value in position matrix and cut it out.) alignedtext
+grestore
+% sch_init->find_max_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1424.48 363.84 moveto
+1433.81 345.92 1446 317.46 1446 291 curveto
+1446 291 1446 291 1446 180 curveto
+1446 149.51 1420.19 128.16 1393.02 114.13 curveto
+stroke
+0 0 0 edgecolor
+newpath 1394.31 110.87 moveto
+1383.79 109.65 lineto
+1391.26 117.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1394.31 110.87 moveto
+1383.79 109.65 lineto
+1391.26 117.16 lineto
+closepath stroke
+grestore
+% fill_day
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+517 18 137.94 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+418.5 12.9 moveto 197 (fill the day in correct table position.) alignedtext
+grestore
+% find_max_pos->fill_day
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1179.8 78.25 moveto
+1024.34 64.12 785.13 42.38 640.6 29.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 640.64 25.73 moveto
+630.36 28.31 lineto
+640 32.7 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 640.64 25.73 moveto
+630.36 28.31 lineto
+640 32.7 lineto
+closepath stroke
+grestore
+% fill_day->next_day
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 479.81 35.52 moveto
+459.32 48.01 438 67.01 438 92 curveto
+438 436 438 436 438 436 curveto
+438 500.89 918.34 518.67 1082.65 522.85 curveto
+stroke
+0 0 0 edgecolor
+newpath 1082.93 526.36 moveto
+1093.01 523.11 lineto
+1083.1 519.36 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1082.93 526.36 moveto
+1093.01 523.11 lineto
+1083.1 519.36 lineto
+closepath stroke
+grestore
+% exhaust_init
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+942 328 167.04 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+821.5 322.9 moveto 241 (exhausted init: create a temperary schedule.) alignedtext
+grestore
+% repeat->exhaust_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 942 417.68 moveto
+942 400.82 942 375.57 942 356.15 curveto
+stroke
+0 0 0 edgecolor
+newpath 945.5 356.05 moveto
+942 346.05 lineto
+938.5 356.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 945.5 356.05 moveto
+942 346.05 lineto
+938.5 356.05 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+942 376.9 moveto 56 (exhausted) alignedtext
+grestore
+% find_max_sch
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+942 254 135.19 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+846 248.9 moveto 192 (Find the current optimal schedule.) alignedtext
+grestore
+% exhaust_init->find_max_sch
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 942 309.71 moveto
+942 301.46 942 291.54 942 282.36 curveto
+stroke
+0 0 0 edgecolor
+newpath 945.5 282.08 moveto
+942 272.08 lineto
+938.5 282.08 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 945.5 282.08 moveto
+942 272.08 lineto
+938.5 282.08 lineto
+closepath stroke
+grestore
+% fill_remaining
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+942 180 475.91 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+583.5 174.9 moveto 717 (Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values) alignedtext
+grestore
+% find_max_sch->fill_remaining
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 942 235.71 moveto
+942 227.46 942 217.54 942 208.36 curveto
+stroke
+0 0 0 edgecolor
+newpath 945.5 208.08 moveto
+942 198.08 lineto
+938.5 208.08 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 945.5 208.08 moveto
+942 198.08 lineto
+938.5 208.08 lineto
+closepath stroke
+grestore
+% fill_remaining->find_max_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1020.72 162.19 moveto
+1085.86 147.45 1178.25 126.55 1245.26 111.4 curveto
+stroke
+0 0 0 edgecolor
+newpath 1246.39 114.73 moveto
+1255.37 109.11 lineto
+1244.85 107.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1246.39 114.73 moveto
+1255.37 109.11 lineto
+1244.85 107.9 lineto
+closepath stroke
+grestore
+% all_exhaust
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+797 92 282.88 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+587 86.9 moveto 420 (When all position matrices are exhausted, optimal schedule should be found) alignedtext
+grestore
+% fill_remaining->all_exhaust
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 912.31 161.98 moveto
+890.02 148.45 859.33 129.83 835.21 115.19 curveto
+stroke
+0 0 0 edgecolor
+newpath 837.02 112.19 moveto
+826.65 110 lineto
+833.39 118.18 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 837.02 112.19 moveto
+826.65 110 lineto
+833.39 118.18 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+883 130.9 moveto 31 (None) alignedtext
+grestore
+% complete
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+797 18 46.15 18 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+769.5 12.9 moveto 55 (Complete) alignedtext
+grestore
+% all_exhaust->complete
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 797 73.71 moveto
+797 65.46 797 55.54 797 46.36 curveto
+stroke
+0 0 0 edgecolor
+newpath 800.5 46.08 moveto
+797 36.08 lineto
+793.5 46.08 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 800.5 46.08 moveto
+797 36.08 lineto
+793.5 46.08 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 1942 1206
+end
+restore
+%%EOF

@@ -1,38 +1,57 @@
 digraph algorithm{
-    position_filled [label="Is position\n filled?"]
-    able [label="Can do\n this type of\n work?"]
-    next_position [label="next position"]
-    next_day [label="next day"]
-    next_person [label="next person"]
-    row_filled [label="Is the row\n filled?"]
+    /* Staff Roster Generated Variables */
 
-    initialization -> person;
-    person -> position_filled;
+    ros_init [label = "init: find base vector"]
+    position [label = "Create temporary vector for people filling position"]
+    person [label = "Person"]
+    next_person [label = "Next Person"]
+    validate [label = "Perform Validation"]
+    fill_position [label = "Fill Position and Find Next Position to be Filled"]
+    wd_condition [label = "If all workday positions cannot be filled, the base vector is the scheduled vector"]
+    wd_position_matrix [label = "Calculate optimizations then add column to position matrix or create one. NULLs and Deletes are used to lock people or remove from a position to increse speed."]
+    wd_finish [label = "Work Day is Finished"]
+    next_day [label = "Next Day"]
+    new_wd_pos_mat [label = "Create new position matrix"]
 
-    position_filled -> next_position [label="yes"];
-    position_filled -> able [label="no"]; 
+    /* Schedule Generation Variables */
+    sch_init [label = "init: scheduler and create a 3d table of matrices where size is determined by the largest position matrix."]
+    find_max_pos [label = "find maximum optimal value in position matrix and cut it out."]
+    fill_day [label = "fill the day in correct table position."]
+    next_day [label = "Next Day"]
+    incr_elm [label = "Calculate current schedule optimizations then switch to the next empty scheduling matrix"]
+    repeat [label = "Repeat process until the smallest position matrix is exhausted"]
+    exhaust_init [label = "exhausted init: create a temperary schedule."] 
+    find_max_sch [label = "Find the current optimal schedule."]
+    fill_remaining [label = "Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values"]
+    all_exhaust [label = "When all position matrices are exhausted, optimal schedule should be found"]
+    complete [label = "Complete"]
 
-    next_position -> position_filled [label="exist"];
-    next_position -> next_person [label="none"];
+    /* Roster Generation Logic */
 
-    able -> available [label = "yes"];
-    able -> next_position [label = "no"];
+    ros_init -> position;
+    position -> person;
+    person -> validate;
+    validate -> next_person [label = "Deny"];
+    validate -> fill_position;
+    fill_position -> position;
+    fill_position -> wd_condition [label = "None"];
+    wd_condition -> wd_position_matrix;
+    wd_position_matrix -> wd_finish;
+    wd_finish -> next_day;
+    next_day -> position;
+    next_day -> sch_init [label = "None"];
 
-    available -> next_person[label="no"];
-    available -> schedule[label="yes"];
+    /* Schedule Generation Logic */
 
-    schedule -> row_filled;
-    row_filled -> next_person [label="no"];
-    row_filled -> next_day [label="yes"];
-
-    next_day -> finished [label="none"];
-    next_day -> person [label="stay on\n same person"];
-
-    next_person -> position_filled [label="exist"];
-    next_person -> next_day [label="none"];
+    sch_init -> find_max_pos;
+    find_max_pos -> fill_day;
+    fill_day -> next_day;
+    next_day -> incr_elm;
+    next_day -> repeat [label = "None"];
+    repeat -> exhaust_init [label = "exhausted"];
+    exhaust_init -> find_max_sch;
+    find_max_sch -> fill_remaining;
+    fill_remaining -> find_max_pos;
+    fill_remaining -> all_exhaust [label = "None"];
+    all_exhaust -> complete;
 }
-
-/* Lump the Can work posi., # of days, and available days as a single
-   avalability block. Easier to maintain, graph, and analyze. Potential
-   ability to simplify the math too, 3 less comparisons */
-

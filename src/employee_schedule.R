@@ -17,7 +17,7 @@
 
 #Randomizes the row order for different outcomes upon each run
 #this is to avoid favoritism due to the algorithmic method
-schedule = read.csv("availability.csv")
+schedule = read.csv("../data/availability.csv")
 randVector = runif(length(schedule[,1]))
 schedule = schedule[order(randVector),]
 
@@ -96,4 +96,4 @@ while(dayIndex < daysOpen){
 #}
 #debug(scheduler)
 
-write.csv(optimizedSchedule, file = "weekly_schedule.csv")
+write.csv(optimizedSchedule, file = "../data/weekly_schedule.csv")
