@@ -40,6 +40,23 @@ Multiple Shift Additions: Morning, Afternoon, Graveyard aka MAG
     \caption{\small Algorithm Digraph}
 \end{wrapfigure}
 
+\section{Modules and Functions}
+
+The entire depth of the inner workings of the program/algorithm are outlined here. 
+The subsections try to follow a logical working order of pragmatic flow.
+
+\subsection{Roster Initializations}
+\subsection{Workday Validation}
+\subsection{Rostering Optimizations}
+\subsection{Scheduler Optimizations}
+\subsection{Multi-Shift Support}
+
+This should be taken care of in the scheduler algorithm rather than the rostering algorithm.
+This makes sense because rostering will calculate all possibilities of a person's availability rather than overlook other possibilities for other shifts.
+The scheduler should have a section to combine and compare full shift schedules where logic should be performed for optimizations and shifting conflicts or other legal parameters.
+
+\subsection{Multi-Shift Optimizations}
+
 \section{Data Representations}
 
 Incoming input is currently contained in two separate CSV files. 

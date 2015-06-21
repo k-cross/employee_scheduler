@@ -1,57 +1,95 @@
 digraph algorithm{
-    /* Staff Roster Generated Variables */
 
-    ros_init [label = "init: find base vector"]
-    position [label = "Create temporary vector for people filling position"]
-    person [label = "Person"]
-    next_person [label = "Next Person"]
-    validate [label = "Perform Validation"]
-    fill_position [label = "Fill Position and Find Next Position to be Filled"]
-    wd_condition [label = "If all workday positions cannot be filled, the base vector is the scheduled vector"]
-    wd_position_matrix [label = "Calculate optimizations then add column to position matrix or create one. NULLs and Deletes are used to lock people or remove from a position to increse speed."]
-    wd_finish [label = "Work Day is Finished"]
-    next_day [label = "Next Day"]
-    new_wd_pos_mat [label = "Create new position matrix"]
+    /* Default Graph Options */
+
+    node [shape = rectangle]
+    compound = true;
+    splines = ortho;
+
+
+    /* Position Matrix Generated Variables */
+
+    /* Need to modify */
+    subgraph cluster0 {
+        label = "Person Validation";
+        validate [label = "Perform Validation: Checks person's availability"];
+        next_person [label = "Next Person: Increment"];
+        no_person [label = "Mark Element and set WD Condition flag to true", style = filled, color = crimson];
+        wd_condition [label = "If all workday positions cannot be filled, the base vector is the scheduled vector"];
+        fill_position [label = "Fill position with proper data and increment position  and person counter"];
+
+        validate -> next_person [xlabel = "Deny ", color = crimson];
+        validate -> fill_position;
+        next_person -> validate;
+        next_person -> no_person [xlabel = "None ", color = crimson];
+        no_person -> fill_position;
+        fill_position -> wd_condition [xlabel = "None "];
+        fill_position -> validate;
+    }
+
+    subgraph cluster1 {
+        label = "Taboo List";
+        taboo_input [label = "input"];
+        add_taboo [label = "initialize or add person to taboo list"];
+        remove_taboo [label = "remove person from taboo list"];
+        check_taboo [label = "check for taboo people"];
+        taboo_output [label = "output"];
+
+        taboo_input -> add_taboo -> taboo_output;
+        taboo_input -> remove_taboo -> taboo_output;
+        taboo_input -> check_taboo -> taboo_output;
+    }
+
+    subgraph cluster2 {
+        label = "Main Roster Generation Logic";
+        pos_matrix_init [label = "init: create Position , Possibility , and Fill Matrices, use chaining for position depth", style = filled, color = skyblue];
+        next_day [label = "Next Day"];
+        temps [label = "create temp. avail, taboo list, and use the Fill Matrix with all who can perform position on a given day"];
+        possibility_calc [label = "possibility matrix generated using R's combination generator"];
+        position_calc [label = "each possibility filled in by erasing availability using logic"]; //Since all positions generated, use people incrementors instead of position
+        wd_finish [label = "Work Day is Finished"];
+
+        pos_matrix_init -> temps; 
+        possibility_calc -> position_calc -> wd_finish;
+        wd_finish -> next_day -> pos_matrix_init;
+    }
+
+
+    /* Position Matrix Generation Logic */
+
+    temps -> validate [ltail = cluster2, lhead = cluster0];
+    fill_position -> possibility_calc [ltail = cluster0, lhead = cluster2];
+
 
     /* Schedule Generation Variables */
-    sch_init [label = "init: scheduler and create a 3d table of matrices where size is determined by the largest position matrix."]
-    find_max_pos [label = "find maximum optimal value in position matrix and cut it out."]
-    fill_day [label = "fill the day in correct table position."]
-    next_day [label = "Next Day"]
-    incr_elm [label = "Calculate current schedule optimizations then switch to the next empty scheduling matrix"]
-    repeat [label = "Repeat process until the smallest position matrix is exhausted"]
-    exhaust_init [label = "exhausted init: create a temperary schedule."] 
-    find_max_sch [label = "Find the current optimal schedule."]
-    fill_remaining [label = "Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values"]
-    all_exhaust [label = "When all position matrices are exhausted, optimal schedule should be found"]
+
+/*
+    subgraph cluster3 {
+        sch_init [label = "init: scheduler and create a 3d table of matrices where depth is determined by the largest position matrix.", style = filled, color = skyblue];
+        find_max_pos [label = "find maximum optimal value in position matrix and cut it out."];
+        fill_day [label = "fill the day in correct table position."];
+        incr_elm [label = "Calculate current schedule optimizations then switch to the next empty scheduling matrix"];
+        repeat [label = "Repeat process until the smallest position matrix is exhausted"];
+        exhaust_init [label = "exhausted init: create a temperary schedule"];
+        find_max_sch [label = "Find the current optimal schedule"];
+        fill_remaining [label = "Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values"];
+        all_exhaust [label = "When all position matrices are exhausted, optimal schedule should be found"];
+    }
+
     complete [label = "Complete"]
-
-    /* Roster Generation Logic */
-
-    ros_init -> position;
-    position -> person;
-    person -> validate;
-    validate -> next_person [label = "Deny"];
-    validate -> fill_position;
-    fill_position -> position;
-    fill_position -> wd_condition [label = "None"];
-    wd_condition -> wd_position_matrix;
-    wd_position_matrix -> wd_finish;
-    wd_finish -> next_day;
-    next_day -> position;
-    next_day -> sch_init [label = "None"];
+*/
 
     /* Schedule Generation Logic */
-
+/*
     sch_init -> find_max_pos;
     find_max_pos -> fill_day;
-    fill_day -> next_day;
-    next_day -> incr_elm;
-    next_day -> repeat [label = "None"];
-    repeat -> exhaust_init [label = "exhausted"];
+    fill_day -> repeat;
+    incr_elm -> exhaust_init;
+    repeat -> exhaust_init [xlabel = "exhausted "];
     exhaust_init -> find_max_sch;
     find_max_sch -> fill_remaining;
     fill_remaining -> find_max_pos;
-    fill_remaining -> all_exhaust [label = "None"];
+    fill_remaining -> all_exhaust [xlabel = "None "];
     all_exhaust -> complete;
+*/
 }
