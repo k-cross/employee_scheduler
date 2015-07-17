@@ -5,66 +5,86 @@ digraph algorithm{
     node [shape = rectangle]
     compound = true;
     splines = ortho;
+    nodesep = 1;
 
 
     /* Position Matrix Generated Variables */
 
-    /* Need to modify */
-    subgraph cluster0 {
+    subgraph cluster_valid {
         label = "Person Validation";
+        style = filled;
         validate [label = "Perform Validation: Checks person's availability"];
         next_person [label = "Next Person: Increment"];
         no_person [label = "Mark Element and set WD Condition flag to true", style = filled, color = crimson];
-        wd_condition [label = "If all workday positions cannot be filled, the base vector is the scheduled vector"];
-        fill_position [label = "Fill position with proper data and increment position  and person counter"];
+        wd_condition [label = "Return to Main"];
+        fill_position [label = "Fill position with proper data and increment position or person counter"];
 
         validate -> next_person [xlabel = "Deny ", color = crimson];
         validate -> fill_position;
         next_person -> validate;
         next_person -> no_person [xlabel = "None ", color = crimson];
         no_person -> fill_position;
-        fill_position -> wd_condition [xlabel = "None "];
-        fill_position -> validate;
+        fill_position -> wd_condition [xlabel = "No More Positions "];
+        fill_position -> validate [xlabel = "Increment Person Counter "];
     }
 
-    subgraph cluster1 {
+    subgraph cluster_taboo {
         label = "Taboo List";
-        taboo_input [label = "input"];
+        style = filled;
+        taboo_input [label = "input", color = skyblue, style = filled];
         add_taboo [label = "initialize or add person to taboo list"];
         remove_taboo [label = "remove person from taboo list"];
         check_taboo [label = "check for taboo people"];
-        taboo_output [label = "output"];
+        taboo_output [label = "output", color = crimson, style = filled];
 
         taboo_input -> add_taboo -> taboo_output;
         taboo_input -> remove_taboo -> taboo_output;
         taboo_input -> check_taboo -> taboo_output;
     }
 
-    subgraph cluster2 {
+    subgraph cluster_main {
         label = "Main Roster Generation Logic";
+        style = filled;
         pos_matrix_init [label = "init: create Position , Possibility , and Fill Matrices, use chaining for position depth", style = filled, color = skyblue];
-        next_day [label = "Next Day"];
+        next_day [label = "Next Day", color = crimson, style = filled];
         temps [label = "create temp. avail, taboo list, and use the Fill Matrix with all who can perform position on a given day"];
-        possibility_calc [label = "possibility matrix generated using R's combination generator"];
-        position_calc [label = "each possibility filled in by erasing availability using logic"]; //Since all positions generated, use people incrementors instead of position
+        possibility_calc [label = "possibility matrix generated using combination generator"];
+        position_calc [label = "Call Create_Position Function"];
         wd_finish [label = "Work Day is Finished"];
 
-        pos_matrix_init -> temps; 
-        possibility_calc -> position_calc -> wd_finish;
+        pos_matrix_init -> temps -> possibility_calc;
+        possibility_calc -> position_calc;
         wd_finish -> next_day -> pos_matrix_init;
     }
 
+    subgraph cluster_position {
+        label = "Position Matrix Creation";
+        style = filled;
+        create_init [label = "Fill current position with ammount needed", color = skyblue, style = filled];
+        delete_matrix_entry [label = "add people in current position to taboo list then delete the possibility matrix entry"];
+        next_pos [label = "increment position counter"];
+        no_pos [label = "column finished, calculate optimization value"];
+        next_possibility [label = "increment possibility"];
+        no_possibility [label = "if none mark and fill with appropriate Fill Matrix entry", color = crimson, style = filled];
+        pos_check [label = "check taboo list to make sure no one is in it"];
+        next_column [label = "create new column to be filled, reset counters"];
 
-    /* Position Matrix Generation Logic */
-
-    temps -> validate [ltail = cluster2, lhead = cluster0];
-    fill_position -> possibility_calc [ltail = cluster0, lhead = cluster2];
+        create_init -> delete_matrix_entry -> next_pos -> pos_check;
+        next_pos -> no_pos [xlabel = "None ", color = crimson];
+        pos_check -> create_init;
+        pos_check -> next_possibility [xlabel = "Fail ", color = crimson];
+        next_possibility -> no_possibility [xlabel = "None ", color = crimson];
+        next_possibility -> pos_check;
+        no_possibility -> next_pos;
+        no_pos -> next_column -> create_init;
+    }
 
 
     /* Schedule Generation Variables */
 
-/*
-    subgraph cluster3 {
+    subgraph cluster_schedule {
+        label = "Schedule Generation";
+        style = filled;
         sch_init [label = "init: scheduler and create a 3d table of matrices where depth is determined by the largest position matrix.", style = filled, color = skyblue];
         find_max_pos [label = "find maximum optimal value in position matrix and cut it out."];
         fill_day [label = "fill the day in correct table position."];
@@ -74,22 +94,27 @@ digraph algorithm{
         find_max_sch [label = "Find the current optimal schedule"];
         fill_remaining [label = "Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values"];
         all_exhaust [label = "When all position matrices are exhausted, optimal schedule should be found"];
+
+        sch_init -> find_max_pos -> fill_day -> repeat;
+        incr_elm -> exhaust_init;
+        repeat -> exhaust_init [xlabel = "exhausted "];
+        exhaust_init -> find_max_sch -> fill_remaining -> find_max_pos;
+        fill_remaining -> all_exhaust [xlabel = "None "];
     }
 
-    complete [label = "Complete"]
-*/
+
+    /* Position Matrix Generation Logic */
+
+    complete [label = "Complete", style = filled, color = green];
+
+    temps -> validate [color = skyblue];
+    wd_condition -> possibility_calc [color = crimson];
+    position_calc -> create_init [color = skyblue];
+    no_pos -> wd_finish [xlabel = "No New ", color = crimson];
+
 
     /* Schedule Generation Logic */
-/*
-    sch_init -> find_max_pos;
-    find_max_pos -> fill_day;
-    fill_day -> repeat;
-    incr_elm -> exhaust_init;
-    repeat -> exhaust_init [xlabel = "exhausted "];
-    exhaust_init -> find_max_sch;
-    find_max_sch -> fill_remaining;
-    fill_remaining -> find_max_pos;
-    fill_remaining -> all_exhaust [xlabel = "None "];
+
+    next_day -> sch_init [xlabel = "None ", color = crimson];
     all_exhaust -> complete;
-*/
 }
