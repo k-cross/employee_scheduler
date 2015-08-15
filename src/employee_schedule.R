@@ -97,3 +97,7 @@ while(dayIndex < daysOpen){
 #debug(scheduler)
 
 write.csv(optimizedSchedule, file = "../data/weekly_schedule.csv")
+
+# Call CsvToHtml.exe to format the Output
+system("CsvToHtml.exe ../data/weekly_schedule.csv ../data/weekly_schedule.html")
+
