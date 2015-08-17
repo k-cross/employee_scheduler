@@ -44,6 +44,22 @@ The subsections try to follow a logical working order of pragmatic flow.
 \subsection{Roster Initializations}
 \subsection{Workday Validation}
 \subsection{Rostering Optimizations}
+
+There are currently four values considered for the final roster optimizer value.
+The day difficulty, outstanding employee, position preference, and the employee day preference values and their relationship are what determine the optimizer value.
+Any undesirable relationships and traits are given zero points or subtract points, as optimizer values can be negative.
+Day preferences are given on the availability grid with a value of zero through five, where zero indicates the impossibility of work and five is the most highly desired day to work.
+The position preference value currently only determines the preference of one position, and it is a number, the position index to which they prefer.
+The other two values are boolean, which is easy to sum.
+
+All positive relationships and values are given one point and summed, except all the points on day preferences are added instead of a single point.
+
+The relationships needed to accrue points are the following:
+1) Outstanding employee and difficult day
+2) Difficult day with no outstanding employee in preferred position, then a point is subtracted.
+
+The entire roster is sorted from highest to lowest by optimizer value then given to the scheduler function.
+
 \subsection{Scheduler Optimizations}
 \subsection{Multi-Shift Support}
 

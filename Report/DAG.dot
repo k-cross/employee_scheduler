@@ -4,7 +4,7 @@ digraph algorithm{
 
     node [shape = rectangle]
     compound = true;
-    splines = ortho;
+    //splines = ortho;
     nodesep = 1;
 
 
