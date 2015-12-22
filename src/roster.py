@@ -1,7 +1,12 @@
 """Roster Class is built mainly as a subclass
-   for the main Schedule Class"""
+   for the main Schedule Class
+
+   Notes: After working tests, convert from multidimensional lists to numpy and pandas objects/arrays"""
+
+"""attach counter values to the names of people for the actual scheduler"""
 
 import csv
+from collections import OrderedDict
 from itertools import combinations, permutations
 
 class Roster:
@@ -140,19 +145,23 @@ class Roster:
 
                 # Position Iterator
                 for j in range(0, self._worker_num[i]):
+                    # Problem with iteration, must add another check condition
                     if(temp_vector[position_number] > 0):
                         if(p[j] in  self._fill_matrix[i][position_number]):
                             temp_vector[position_number] -= 1
+                            self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1].append(p[j])
+                            if j > 2:
+                                print(j)
 
                             # Optimizer Calculation
-                            if(self._AVAILABILITY_GRID[p[j]][self._avail_col_size - 3] == 1
-                            and self._SHIFT_GRID[i + 1][self._shift_col_size - 1]):
-                                optimizer_value += 2
+                            #if(self._AVAILABILITY_GRID[p[j]][self._avail_col_size - 3] == 1
+                            #and self._SHIFT_GRID[i + 1][self._shift_col_size - 1]):
+                            #    optimizer_value += 2
 
-                            if(self._AVAILABILITY_GRID[p[j]][self._avail_col_size - 2] == j):
-                                optimizer_value += 1
+                            #if(self._AVAILABILITY_GRID[p[j]][self._avail_col_size - 2] == j):
+                            #    optimizer_value += 1
 
-                            optimizer_value += self._AVAILABILITY_GRID[p[j]][i + 1]
+                            #optimizer_value += self._AVAILABILITY_GRID[p[j]][i + 1]
 
                         else:
                             del self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1]
@@ -163,5 +172,6 @@ class Roster:
                         j -= 1
 
                 if(good_flag):
-                    self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1] = p
-                    self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1].append(optimizer_value)
+                    #self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1] = p
+                    #self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1].append(optimizer_value)
+                    print(self._possibility_matrix[i][len(self._possibility_matrix[i]) - 1])

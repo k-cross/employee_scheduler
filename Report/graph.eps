@@ -1,0 +1,1723 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 47 47 3084 988
+%%HiResBoundingBox: 47.500000 47.500000 3084.000000 988.000000
+%%Creator: graphviz version 2.38.0 (20140413.2041)
+%%Title: algorithm
+%%EndComments
+% EPSF created by ps2eps 1.68
+%%BeginProlog
+save
+countdictstack
+mark
+newpath
+/showpage {} def
+/setpagedevice {pop} def
+%%EndProlog
+%%Page 1 1
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+/tapered { } bind def
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+/endpage { showpage } bind def
+/showpage { } def
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+/layerlen layercolorseq length def
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+/onlayer { curlayer ne {invis} if } def
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+/curlayer 0 def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 3120 1024
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 3084 988 boxprim clip newpath
+1 1 set_scale 0 rotate 40 40 translate
+% cluster_valid
+gsave
+0 0 0.82745 graphcolor
+newpath 1934 595 moveto
+1934 972 lineto
+2362 972 lineto
+2362 595 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 graphcolor
+newpath 1934 595 moveto
+1934 972 lineto
+2362 972 lineto
+2362 595 lineto
+closepath stroke
+0 0 0 graphcolor
+14 /Times-Roman set_font
+2098 956.8 moveto 100 (Person Validation) alignedtext
+grestore
+% cluster_taboo
+gsave
+0 0 0.82745 graphcolor
+newpath 2370 750 moveto
+2370 972 lineto
+3068 972 lineto
+3068 750 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 graphcolor
+newpath 2370 750 moveto
+2370 972 lineto
+3068 972 lineto
+3068 750 lineto
+closepath stroke
+0 0 0 graphcolor
+14 /Times-Roman set_font
+2688.5 956.8 moveto 61 (Taboo List) alignedtext
+grestore
+% cluster_main
+gsave
+0 0 0.82745 graphcolor
+newpath 1245 451 moveto
+1245 897 lineto
+1835 897 lineto
+1835 451 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 graphcolor
+newpath 1245 451 moveto
+1245 897 lineto
+1835 897 lineto
+1835 451 lineto
+closepath stroke
+0 0 0 graphcolor
+14 /Times-Roman set_font
+1455 881.8 moveto 170 (Main Roster Generation Logic) alignedtext
+grestore
+% cluster_position
+gsave
+0 0 0.82745 graphcolor
+newpath 1118 8 moveto
+1118 443 lineto
+1876 443 lineto
+1876 8 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 graphcolor
+newpath 1118 8 moveto
+1118 443 lineto
+1876 443 lineto
+1876 8 lineto
+closepath stroke
+0 0 0 graphcolor
+14 /Times-Roman set_font
+1427.5 427.8 moveto 139 (Position Matrix Creation) alignedtext
+grestore
+% cluster_schedule
+gsave
+0 0 0.82745 graphcolor
+newpath 8 152 moveto
+8 742 lineto
+1042 742 lineto
+1042 152 lineto
+closepath fill
+1 setlinewidth
+filled
+0 0 0 graphcolor
+newpath 8 152 moveto
+8 742 lineto
+1042 742 lineto
+1042 152 lineto
+closepath stroke
+0 0 0 graphcolor
+14 /Times-Roman set_font
+466 726.8 moveto 118 (Schedule Generation) alignedtext
+grestore
+% validate
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2262 941 moveto
+1978 941 lineto
+1978 905 lineto
+2262 905 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1986 919.3 moveto 268 (Perform Validation: Checks person's availability) alignedtext
+grestore
+% next_person
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2194.5 866 moveto
+2045.5 866 lineto
+2045.5 830 lineto
+2194.5 830 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2053.5 844.3 moveto 133 (Next Person: Increment) alignedtext
+grestore
+% validate->next_person
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 2095.17 904.84 moveto
+2095.17 904.84 2095.17 876.25 2095.17 876.25 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 2098.67 876.25 moveto
+2095.17 866.25 lineto
+2091.67 876.25 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 2098.67 876.25 moveto
+2095.17 866.25 lineto
+2091.67 876.25 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+2062.17 894.35 moveto 33 (Deny ) alignedtext
+grestore
+% fill_position
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2353.5 711 moveto
+1942.5 711 lineto
+1942.5 675 lineto
+2353.5 675 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1950.5 689.3 moveto 395 (Fill position with proper data and increment position or person counter) alignedtext
+grestore
+% validate->fill_position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2240.33 904.95 moveto
+2240.33 904.95 2240.33 721.28 2240.33 721.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2243.83 721.28 moveto
+2240.33 711.28 lineto
+2236.83 721.28 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2243.83 721.28 moveto
+2240.33 711.28 lineto
+2236.83 721.28 lineto
+closepath stroke
+grestore
+% next_person->validate
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2144.83 866.16 moveto
+2144.83 866.16 2144.83 894.75 2144.83 894.75 curveto
+stroke
+0 0 0 edgecolor
+newpath 2141.33 894.75 moveto
+2144.83 904.75 lineto
+2148.33 894.75 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2141.33 894.75 moveto
+2144.83 904.75 lineto
+2148.33 894.75 lineto
+closepath stroke
+grestore
+% no_person
+gsave
+0.96471 0.90588 0.86275 nodecolor
+newpath 2229.5 794 moveto
+1942.5 794 lineto
+1942.5 758 lineto
+2229.5 758 lineto
+closepath fill
+1 setlinewidth
+filled
+0.96471 0.90588 0.86275 nodecolor
+newpath 2229.5 794 moveto
+1942.5 794 lineto
+1942.5 758 lineto
+2229.5 758 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1950.5 772.3 moveto 271 (Mark Element and set WD Condition flag to true) alignedtext
+grestore
+% next_person->no_person
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 2120 829.83 moveto
+2120 829.83 2120 804.41 2120 804.41 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 2123.5 804.41 moveto
+2120 794.41 lineto
+2116.5 804.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 2123.5 804.41 moveto
+2120 794.41 lineto
+2116.5 804.41 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+2086 805.92 moveto 34 (None ) alignedtext
+grestore
+% no_person->fill_position
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2086 757.99 moveto
+2086 757.99 2086 721.26 2086 721.26 curveto
+stroke
+0 0 0 edgecolor
+newpath 2089.5 721.26 moveto
+2086 711.26 lineto
+2082.5 721.26 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2089.5 721.26 moveto
+2086 711.26 lineto
+2082.5 721.26 lineto
+closepath stroke
+grestore
+% wd_condition
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2121 639 moveto
+2019 639 lineto
+2019 603 lineto
+2121 603 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2027 617.3 moveto 86 (Return to Main) alignedtext
+grestore
+% possibility_calc
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1726 567 moveto
+1394 567 lineto
+1394 531 lineto
+1726 531 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1402 545.3 moveto 316 (possibility matrix generated using combination generator) alignedtext
+grestore
+% wd_condition->possibility_calc
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 2070 602.83 moveto
+2070 581.5 2070 549 2070 549 curveto
+2070 549 1736.29 549 1736.29 549 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 1736.29 545.5 moveto
+1726.29 549 lineto
+1736.29 552.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 1736.29 545.5 moveto
+1726.29 549 lineto
+1736.29 552.5 lineto
+closepath stroke
+grestore
+% fill_position->validate
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2251.17 711.05 moveto
+2251.17 711.05 2251.17 894.72 2251.17 894.72 curveto
+stroke
+0 0 0 edgecolor
+newpath 2247.67 894.72 moveto
+2251.17 904.72 lineto
+2254.67 894.72 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2247.67 894.72 moveto
+2251.17 904.72 lineto
+2254.67 894.72 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+2251.17 806.68 moveto 152 (Increment Person Counter ) alignedtext
+grestore
+% fill_position->wd_condition
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2070 674.83 moveto
+2070 674.83 2070 649.41 2070 649.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 2073.5 649.41 moveto
+2070 639.41 lineto
+2066.5 649.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2073.5 649.41 moveto
+2070 639.41 lineto
+2066.5 649.41 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1963 650.92 moveto 107 (No More Positions ) alignedtext
+grestore
+% taboo_input
+gsave
+0.5451 0.42353 0.92157 nodecolor
+newpath 2732 941 moveto
+2678 941 lineto
+2678 905 lineto
+2732 905 lineto
+closepath fill
+1 setlinewidth
+filled
+0.5451 0.42353 0.92157 nodecolor
+newpath 2732 941 moveto
+2678 941 lineto
+2678 905 lineto
+2732 905 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2690 919.3 moveto 30 (input) alignedtext
+grestore
+% add_taboo
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 3060 866 moveto
+2848 866 lineto
+2848 830 lineto
+3060 830 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2856 844.3 moveto 196 (initialize or add person to taboo list) alignedtext
+grestore
+% taboo_input->add_taboo
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2732.12 923 moveto
+2796.66 923 2954 923 2954 923 curveto
+2954 923 2954 876.16 2954 876.16 curveto
+stroke
+0 0 0 edgecolor
+newpath 2957.5 876.16 moveto
+2954 866.16 lineto
+2950.5 876.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2957.5 876.16 moveto
+2954 866.16 lineto
+2950.5 876.16 lineto
+closepath stroke
+grestore
+% remove_taboo
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2562 866 moveto
+2378 866 lineto
+2378 830 lineto
+2562 830 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2386 844.3 moveto 168 (remove person from taboo list) alignedtext
+grestore
+% taboo_input->remove_taboo
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2677.58 923 moveto
+2615.59 923 2470 923 2470 923 curveto
+2470 923 2470 876.16 2470 876.16 curveto
+stroke
+0 0 0 edgecolor
+newpath 2473.5 876.16 moveto
+2470 866.16 lineto
+2466.5 876.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2473.5 876.16 moveto
+2470 866.16 lineto
+2466.5 876.16 lineto
+closepath stroke
+grestore
+% check_taboo
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 2775.5 866 moveto
+2634.5 866 lineto
+2634.5 830 lineto
+2775.5 830 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2642.5 844.3 moveto 125 (check for taboo people) alignedtext
+grestore
+% taboo_input->check_taboo
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2705 904.84 moveto
+2705 904.84 2705 876.25 2705 876.25 curveto
+stroke
+0 0 0 edgecolor
+newpath 2708.5 876.25 moveto
+2705 866.25 lineto
+2701.5 876.25 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2708.5 876.25 moveto
+2705 866.25 lineto
+2701.5 876.25 lineto
+closepath stroke
+grestore
+% taboo_output
+gsave
+0.96471 0.90588 0.86275 nodecolor
+newpath 2732 794 moveto
+2678 794 lineto
+2678 758 lineto
+2732 758 lineto
+closepath fill
+1 setlinewidth
+filled
+0.96471 0.90588 0.86275 nodecolor
+newpath 2732 794 moveto
+2678 794 lineto
+2678 758 lineto
+2732 758 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2686.5 772.3 moveto 37 (output) alignedtext
+grestore
+% add_taboo->taboo_output
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2954 829.83 moveto
+2954 808.5 2954 776 2954 776 curveto
+2954 776 2742.12 776 2742.12 776 curveto
+stroke
+0 0 0 edgecolor
+newpath 2742.12 772.5 moveto
+2732.12 776 lineto
+2742.12 779.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2742.12 772.5 moveto
+2732.12 776 lineto
+2742.12 779.5 lineto
+closepath stroke
+grestore
+% remove_taboo->taboo_output
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2470 829.83 moveto
+2470 808.5 2470 776 2470 776 curveto
+2470 776 2667.58 776 2667.58 776 curveto
+stroke
+0 0 0 edgecolor
+newpath 2667.58 779.5 moveto
+2677.58 776 lineto
+2667.58 772.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2667.58 779.5 moveto
+2677.58 776 lineto
+2667.58 772.5 lineto
+closepath stroke
+grestore
+% check_taboo->taboo_output
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2705 829.83 moveto
+2705 829.83 2705 804.41 2705 804.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 2708.5 804.41 moveto
+2705 794.41 lineto
+2701.5 804.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2708.5 804.41 moveto
+2705 794.41 lineto
+2701.5 804.41 lineto
+closepath stroke
+grestore
+% pos_matrix_init
+gsave
+0.5451 0.42353 0.92157 nodecolor
+newpath 1723.5 711 moveto
+1252.5 711 lineto
+1252.5 675 lineto
+1723.5 675 lineto
+closepath fill
+1 setlinewidth
+filled
+0.5451 0.42353 0.92157 nodecolor
+newpath 1723.5 711 moveto
+1252.5 711 lineto
+1252.5 675 lineto
+1723.5 675 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1260.5 689.3 moveto 455 (init: create Position , Possibility , and Fill Matrices, use chaining for position depth) alignedtext
+grestore
+% temps
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1827 639 moveto
+1253 639 lineto
+1253 603 lineto
+1827 603 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1261 617.3 moveto 558 (create temp. avail, taboo list, and use the Fill Matrix with all who can perform position on a given day) alignedtext
+grestore
+% pos_matrix_init->temps
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1488.25 674.83 moveto
+1488.25 674.83 1488.25 649.41 1488.25 649.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1491.75 649.41 moveto
+1488.25 639.41 lineto
+1484.75 649.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1491.75 649.41 moveto
+1488.25 639.41 lineto
+1484.75 649.41 lineto
+closepath stroke
+grestore
+% next_day
+gsave
+0.96471 0.90588 0.86275 nodecolor
+newpath 1356 794 moveto
+1288 794 lineto
+1288 758 lineto
+1356 758 lineto
+closepath fill
+1 setlinewidth
+filled
+0.96471 0.90588 0.86275 nodecolor
+newpath 1356 794 moveto
+1288 794 lineto
+1288 758 lineto
+1356 758 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1296 772.3 moveto 52 (Next Day) alignedtext
+grestore
+% next_day->pos_matrix_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1322 757.99 moveto
+1322 757.99 1322 721.26 1322 721.26 curveto
+stroke
+0 0 0 edgecolor
+newpath 1325.5 721.26 moveto
+1322 711.26 lineto
+1318.5 721.26 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1325.5 721.26 moveto
+1322 711.26 lineto
+1318.5 721.26 lineto
+closepath stroke
+grestore
+% sch_init
+gsave
+0.5451 0.42353 0.92157 nodecolor
+newpath 1034 711 moveto
+440 711 lineto
+440 675 lineto
+1034 675 lineto
+closepath fill
+1 setlinewidth
+filled
+0.5451 0.42353 0.92157 nodecolor
+newpath 1034 711 moveto
+440 711 lineto
+440 675 lineto
+1034 675 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+448 689.3 moveto 578 (init: scheduler and create a 3d table of matrices where depth is determined by the largest position matrix.) alignedtext
+grestore
+% next_day->sch_init
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 1287.59 776 moveto
+1162.19 776 737 776 737 776 curveto
+737 776 737 721.01 737 721.01 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 740.5 721.01 moveto
+737 711.01 lineto
+733.5 721.01 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 740.5 721.01 moveto
+737 711.01 lineto
+733.5 721.01 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+950.8 779.8 moveto 34 (None ) alignedtext
+grestore
+% temps->validate
+gsave
+1 setlinewidth
+0.5451 0.42353 0.92157 edgecolor
+newpath 1775.25 639.44 moveto
+1775.25 705.01 1775.25 923 1775.25 923 curveto
+1775.25 923 1967.79 923 1967.79 923 curveto
+stroke
+0.5451 0.42353 0.92157 edgecolor
+newpath 1967.79 926.5 moveto
+1977.79 923 lineto
+1967.79 919.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.5451 0.42353 0.92157 edgecolor
+newpath 1967.79 926.5 moveto
+1977.79 923 lineto
+1967.79 919.5 lineto
+closepath stroke
+grestore
+% temps->possibility_calc
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1560 602.83 moveto
+1560 602.83 1560 577.41 1560 577.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1563.5 577.41 moveto
+1560 567.41 lineto
+1556.5 577.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1563.5 577.41 moveto
+1560 567.41 lineto
+1556.5 577.41 lineto
+closepath stroke
+grestore
+% position_calc
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1652.5 495 moveto
+1467.5 495 lineto
+1467.5 459 lineto
+1652.5 459 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1475.5 473.3 moveto 169 (Call Create_Position Function) alignedtext
+grestore
+% possibility_calc->position_calc
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1560 530.83 moveto
+1560 530.83 1560 505.41 1560 505.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1563.5 505.41 moveto
+1560 495.41 lineto
+1556.5 505.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1563.5 505.41 moveto
+1560 495.41 lineto
+1556.5 505.41 lineto
+closepath stroke
+grestore
+% create_init
+gsave
+0.5451 0.42353 0.92157 nodecolor
+newpath 1687.5 412 moveto
+1432.5 412 lineto
+1432.5 376 lineto
+1687.5 376 lineto
+closepath fill
+1 setlinewidth
+filled
+0.5451 0.42353 0.92157 nodecolor
+newpath 1687.5 412 moveto
+1432.5 412 lineto
+1432.5 376 lineto
+1687.5 376 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1440.5 390.3 moveto 239 (Fill current position with ammount needed) alignedtext
+grestore
+% position_calc->create_init
+gsave
+1 setlinewidth
+0.5451 0.42353 0.92157 edgecolor
+newpath 1560 458.99 moveto
+1560 458.99 1560 422.26 1560 422.26 curveto
+stroke
+0.5451 0.42353 0.92157 edgecolor
+newpath 1563.5 422.26 moveto
+1560 412.26 lineto
+1556.5 422.26 lineto
+closepath fill
+1 setlinewidth
+solid
+0.5451 0.42353 0.92157 edgecolor
+newpath 1563.5 422.26 moveto
+1560 412.26 lineto
+1556.5 422.26 lineto
+closepath stroke
+grestore
+% wd_finish
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1390.5 866 moveto
+1253.5 866 lineto
+1253.5 830 lineto
+1390.5 830 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1261.5 844.3 moveto 121 (Work Day is Finished) alignedtext
+grestore
+% wd_finish->next_day
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1322 829.83 moveto
+1322 829.83 1322 804.41 1322 804.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1325.5 804.41 moveto
+1322 794.41 lineto
+1318.5 804.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1325.5 804.41 moveto
+1322 794.41 lineto
+1318.5 804.41 lineto
+closepath stroke
+grestore
+% delete_matrix_entry
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1793.5 340 moveto
+1326.5 340 lineto
+1326.5 304 lineto
+1793.5 304 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1334.5 318.3 moveto 451 (add people in current position to taboo list then delete the possibility matrix entry) alignedtext
+grestore
+% create_init->delete_matrix_entry
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1560 375.83 moveto
+1560 375.83 1560 350.41 1560 350.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1563.5 350.41 moveto
+1560 340.41 lineto
+1556.5 350.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1563.5 350.41 moveto
+1560 340.41 lineto
+1556.5 350.41 lineto
+closepath stroke
+grestore
+% next_pos
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1634 268 moveto
+1466 268 lineto
+1466 232 lineto
+1634 232 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1474 246.3 moveto 152 (increment position counter) alignedtext
+grestore
+% delete_matrix_entry->next_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1550 303.83 moveto
+1550 303.83 1550 278.41 1550 278.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1553.5 278.41 moveto
+1550 268.41 lineto
+1546.5 278.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1553.5 278.41 moveto
+1550 268.41 lineto
+1546.5 278.41 lineto
+closepath stroke
+grestore
+% no_pos
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1394 196 moveto
+1126 196 lineto
+1126 160 lineto
+1394 160 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1134 174.3 moveto 252 (column finished, calculate optimization value) alignedtext
+grestore
+% next_pos->no_pos
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 1465.94 250 moveto
+1415.19 250 1360.25 250 1360.25 250 curveto
+1360.25 250 1360.25 206.17 1360.25 206.17 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 1363.75 206.17 moveto
+1360.25 196.17 lineto
+1356.75 206.17 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 1363.75 206.17 moveto
+1360.25 196.17 lineto
+1356.75 206.17 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1357.18 253.8 moveto 34 (None ) alignedtext
+grestore
+% pos_check
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1868 196 moveto
+1614 196 lineto
+1614 160 lineto
+1868 160 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1622 174.3 moveto 238 (check taboo list to make sure no one is in it) alignedtext
+grestore
+% next_pos->pos_check
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1624 231.83 moveto
+1624 231.83 1624 206.41 1624 206.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1627.5 206.41 moveto
+1624 196.41 lineto
+1620.5 206.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1627.5 206.41 moveto
+1624 196.41 lineto
+1620.5 206.41 lineto
+closepath stroke
+grestore
+% no_pos->wd_finish
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 1189.25 196.27 moveto
+1189.25 303.65 1189.25 848 1189.25 848 curveto
+1189.25 848 1243.29 848 1243.29 848 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 1243.29 851.5 moveto
+1253.29 848 lineto
+1243.29 844.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 1243.29 851.5 moveto
+1253.29 848 lineto
+1243.29 844.5 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1141.25 552.96 moveto 48 (No New ) alignedtext
+grestore
+% next_column
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1430 124 moveto
+1164 124 lineto
+1164 88 lineto
+1430 88 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1172 102.3 moveto 250 (create new column to be filled, reset counters) alignedtext
+grestore
+% no_pos->next_column
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1279 159.83 moveto
+1279 159.83 1279 134.41 1279 134.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1282.5 134.41 moveto
+1279 124.41 lineto
+1275.5 134.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1282.5 134.41 moveto
+1279 124.41 lineto
+1275.5 134.41 lineto
+closepath stroke
+grestore
+% next_possibility
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1808 124 moveto
+1674 124 lineto
+1674 88 lineto
+1808 88 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1682 102.3 moveto 118 (increment possibility) alignedtext
+grestore
+% no_possibility
+gsave
+0.96471 0.90588 0.86275 nodecolor
+newpath 1784 52 moveto
+1464 52 lineto
+1464 16 lineto
+1784 16 lineto
+closepath fill
+1 setlinewidth
+filled
+0.96471 0.90588 0.86275 nodecolor
+newpath 1784 52 moveto
+1464 52 lineto
+1464 16 lineto
+1784 16 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1472 30.3 moveto 304 (if none mark and fill with appropriate Fill Matrix entry) alignedtext
+grestore
+% next_possibility->no_possibility
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 1729 87.83 moveto
+1729 87.83 1729 62.41 1729 62.41 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 1732.5 62.41 moveto
+1729 52.41 lineto
+1725.5 62.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 1732.5 62.41 moveto
+1729 52.41 lineto
+1725.5 62.41 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1695 63.92 moveto 34 (None ) alignedtext
+grestore
+% next_possibility->pos_check
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1718.67 124.17 moveto
+1718.67 124.17 1718.67 149.59 1718.67 149.59 curveto
+stroke
+0 0 0 edgecolor
+newpath 1715.17 149.59 moveto
+1718.67 159.59 lineto
+1722.17 149.59 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1715.17 149.59 moveto
+1718.67 159.59 lineto
+1722.17 149.59 lineto
+closepath stroke
+grestore
+% no_possibility->next_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1540 52.04 moveto
+1540 52.04 1540 221.85 1540 221.85 curveto
+stroke
+0 0 0 edgecolor
+newpath 1536.5 221.85 moveto
+1540 231.85 lineto
+1543.5 221.85 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1536.5 221.85 moveto
+1540 231.85 lineto
+1543.5 221.85 lineto
+closepath stroke
+grestore
+% pos_check->create_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1810.25 196.04 moveto
+1810.25 247.96 1810.25 394 1810.25 394 curveto
+1810.25 394 1697.69 394 1697.69 394 curveto
+stroke
+0 0 0 edgecolor
+newpath 1697.69 390.5 moveto
+1687.69 394 lineto
+1697.69 397.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1697.69 390.5 moveto
+1687.69 394 lineto
+1697.69 397.5 lineto
+closepath stroke
+grestore
+% pos_check->next_possibility
+gsave
+1 setlinewidth
+0.96471 0.90588 0.86275 edgecolor
+newpath 1763.33 159.83 moveto
+1763.33 159.83 1763.33 134.41 1763.33 134.41 curveto
+stroke
+0.96471 0.90588 0.86275 edgecolor
+newpath 1766.83 134.41 moveto
+1763.33 124.41 lineto
+1759.83 134.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0.96471 0.90588 0.86275 edgecolor
+newpath 1766.83 134.41 moveto
+1763.33 124.41 lineto
+1759.83 134.41 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+1738.33 135.92 moveto 25 (Fail ) alignedtext
+grestore
+% next_column->create_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1163.9 106 moveto
+1118.98 106 1080 106 1080 106 curveto
+1080 106 1080 394 1080 394 curveto
+1080 394 1422.31 394 1422.31 394 curveto
+stroke
+0 0 0 edgecolor
+newpath 1422.31 397.5 moveto
+1432.31 394 lineto
+1422.31 390.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1422.31 397.5 moveto
+1432.31 394 lineto
+1422.31 390.5 lineto
+closepath stroke
+grestore
+% find_max_pos
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 960.5 639 moveto
+601.5 639 lineto
+601.5 603 lineto
+960.5 603 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+609.5 617.3 moveto 343 (find maximum optimal value in position matrix and cut it out.) alignedtext
+grestore
+% sch_init->find_max_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 781 674.83 moveto
+781 674.83 781 649.41 781 649.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 784.5 649.41 moveto
+781 639.41 lineto
+777.5 649.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 784.5 649.41 moveto
+781 639.41 lineto
+777.5 649.41 lineto
+closepath stroke
+grestore
+% fill_day
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 887.5 567 moveto
+674.5 567 lineto
+674.5 531 lineto
+887.5 531 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+682.5 545.3 moveto 197 (fill the day in correct table position.) alignedtext
+grestore
+% find_max_pos->fill_day
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 781 602.83 moveto
+781 602.83 781 577.41 781 577.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 784.5 577.41 moveto
+781 567.41 lineto
+777.5 577.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 784.5 577.41 moveto
+781 567.41 lineto
+777.5 577.41 lineto
+closepath stroke
+grestore
+% repeat
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 959.5 495 moveto
+602.5 495 lineto
+602.5 459 lineto
+959.5 459 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+610.5 473.3 moveto 341 (Repeat process until the smallest position matrix is exhausted) alignedtext
+grestore
+% fill_day->repeat
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 781 530.83 moveto
+781 530.83 781 505.41 781 505.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 784.5 505.41 moveto
+781 495.41 lineto
+777.5 505.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 784.5 505.41 moveto
+781 495.41 lineto
+777.5 505.41 lineto
+closepath stroke
+grestore
+% incr_elm
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 530 495 moveto
+16 495 lineto
+16 459 lineto
+530 459 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+24 473.3 moveto 498 (Calculate current schedule optimizations then switch to the next empty scheduling matrix) alignedtext
+grestore
+% exhaust_init
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 794 412 moveto
+540 412 lineto
+540 376 lineto
+794 376 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+548 390.3 moveto 238 (exhausted init: create a temperary schedule) alignedtext
+grestore
+% incr_elm->exhaust_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 530.28 477 moveto
+554.8 477 570.75 477 570.75 477 curveto
+570.75 477 570.75 422.01 570.75 422.01 curveto
+stroke
+0 0 0 edgecolor
+newpath 574.25 422.01 moveto
+570.75 412.01 lineto
+567.25 422.01 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 574.25 422.01 moveto
+570.75 412.01 lineto
+567.25 422.01 lineto
+closepath stroke
+grestore
+% repeat->exhaust_init
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 698.25 458.99 moveto
+698.25 458.99 698.25 422.26 698.25 422.26 curveto
+stroke
+0 0 0 edgecolor
+newpath 701.75 422.26 moveto
+698.25 412.26 lineto
+694.75 422.26 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 701.75 422.26 moveto
+698.25 412.26 lineto
+694.75 422.26 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+639.25 444.43 moveto 59 (exhausted ) alignedtext
+grestore
+% find_max_sch
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 769.5 340 moveto
+564.5 340 lineto
+564.5 304 lineto
+769.5 304 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+572.5 318.3 moveto 189 (Find the current optimal schedule) alignedtext
+grestore
+% exhaust_init->find_max_sch
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 667 375.83 moveto
+667 375.83 667 350.41 667 350.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 670.5 350.41 moveto
+667 340.41 lineto
+663.5 350.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 670.5 350.41 moveto
+667 340.41 lineto
+663.5 350.41 lineto
+closepath stroke
+grestore
+% fill_remaining
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 1033.5 268 moveto
+300.5 268 lineto
+300.5 232 lineto
+1033.5 232 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+308.5 246.3 moveto 717 (Fill current table with remaining unexhausted position matrice values, only using the optimal template to fill the exhausted values) alignedtext
+grestore
+% find_max_sch->fill_remaining
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 667 303.83 moveto
+667 303.83 667 278.41 667 278.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 670.5 278.41 moveto
+667 268.41 lineto
+663.5 278.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 670.5 278.41 moveto
+667 268.41 lineto
+663.5 278.41 lineto
+closepath stroke
+grestore
+% fill_remaining->find_max_pos
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 997 268.15 moveto
+997 342.63 997 621 997 621 curveto
+997 621 970.85 621 970.85 621 curveto
+stroke
+0 0 0 edgecolor
+newpath 970.85 617.5 moveto
+960.85 621 lineto
+970.85 624.5 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 970.85 617.5 moveto
+960.85 621 lineto
+970.85 624.5 lineto
+closepath stroke
+grestore
+% all_exhaust
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+newpath 885 196 moveto
+449 196 lineto
+449 160 lineto
+885 160 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+457 174.3 moveto 420 (When all position matrices are exhausted, optimal schedule should be found) alignedtext
+grestore
+% fill_remaining->all_exhaust
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 667 231.83 moveto
+667 231.83 667 206.41 667 206.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 670.5 206.41 moveto
+667 196.41 lineto
+663.5 206.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 670.5 206.41 moveto
+667 196.41 lineto
+663.5 206.41 lineto
+closepath stroke
+0 0 0 edgecolor
+14 /Times-Roman set_font
+633 207.92 moveto 34 (None ) alignedtext
+grestore
+% complete
+gsave
+0.33333 1 1 nodecolor
+newpath 702.5 124 moveto
+631.5 124 lineto
+631.5 88 lineto
+702.5 88 lineto
+closepath fill
+1 setlinewidth
+filled
+0.33333 1 1 nodecolor
+newpath 702.5 124 moveto
+631.5 124 lineto
+631.5 88 lineto
+702.5 88 lineto
+closepath stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+639.5 102.3 moveto 55 (Complete) alignedtext
+grestore
+% all_exhaust->complete
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 667 159.83 moveto
+667 159.83 667 134.41 667 134.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 670.5 134.41 moveto
+667 124.41 lineto
+663.5 134.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 670.5 134.41 moveto
+667 124.41 lineto
+663.5 134.41 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 3120 1024
+end
+restore
+%%Trailer
+cleartomark
+countdictstack
+exch sub { end } repeat
+restore
+%%EOF
